@@ -1,12 +1,8 @@
 package com.rodrigues.course.repositories;
 
 import com.rodrigues.course.entities.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-/*@Repository
-@Autowired*/
-public interface UserRepository extends JpaRepository<User, Long> {
 
-}
+//nao precisa da annotation Repository pois ao herdar JpaRepository o spring ja reconhece como um componente
+public interface UserRepository extends JpaRepository<User, Long> { }
