@@ -1,5 +1,6 @@
 package com.rodrigues.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rodrigues.course.entities.pk.OrderItemPK;
 import com.rodrigues.course.entities.Order;
 import com.rodrigues.course.entities.Product;
@@ -15,7 +16,7 @@ import java.util.Objects;
 @Table(name = "tb_order_item")
 public class OrderItem implements Serializable {
     @EmbeddedId
-    private OrderItemPK id;
+    private OrderItemPK id = new OrderItemPK();
     private Integer quantity;
     private Double price;
 
@@ -29,6 +30,7 @@ public class OrderItem implements Serializable {
     public OrderItem() {
     }
 
+    @JsonIgnore
     public Order getOrder() {
         return id.getOrder();
     }
