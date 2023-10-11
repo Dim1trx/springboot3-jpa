@@ -88,6 +88,16 @@ public class Order implements Serializable {
         Payment = payment;
     }
 
+    public double getTotal() {
+        double sum = 0;
+
+        for (OrderItem x : items) {
+            sum += x.getSubTotal();
+        }
+
+        return sum;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
