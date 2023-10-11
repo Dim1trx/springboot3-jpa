@@ -1,6 +1,7 @@
 package com.rodrigues.course.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rodrigues.course.entities.Order;
 
 
@@ -21,6 +22,7 @@ public class User implements Serializable {
     private String phone;
     private String password;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "client")
     private List<Order> orders = new ArrayList<>();
 
